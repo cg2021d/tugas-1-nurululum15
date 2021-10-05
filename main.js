@@ -162,7 +162,7 @@ function main() {
     ...object_kanan.atas_V_b, ...object_kanan.kanan_color1,
 
     ...object_kanan.atas_K1_b, ...object_kanan.kanan_color1,
-    ...object_kanan.atas_F1_b, ...object_kanan.kanan_color1,
+    ...object_kanan.depan_F1_b, ...object_kanan.kanan_color1,
     ...object_kanan.depan_D1_b, ...object_kanan.kanan_color1,//150 ///360
 
     ...object_kanan.atas_K1_b, ...object_kanan.kanan_color1,
