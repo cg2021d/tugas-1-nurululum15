@@ -16,7 +16,7 @@ body {
     margin-top: 2rem;
     border: 7px solid burlywood;
     border-radius: 3rem;
-    box-shadow: 13px 12px 15px 0px rgba(0,0,0,0.48);
     -webkit-box-shadow: 13px 12px 15px 0px rgba(0,0,0,0.48);
     -moz-box-shadow: 13px 12px 15px 0px rgba(0,0,0,0.48);
+    box-shadow: 13px 12px 15px 0px rgba(0,0,0,0.48);
 }
