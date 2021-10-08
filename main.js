@@ -27,7 +27,7 @@ function main() {
       depan_M: [-0.51779, 0.124],
       depan_N: [-0.43134, 0.07592],
       depan_H: [-0.36096, 0.08629],
-      depan_Q: [(-0.35039, 0)],
+      depan_Q: [-0.35039, 0],
       depan_L: [-0.42648, -0.05596],
       depan_R: [-0.45334, 0.14121]
 
@@ -321,7 +321,7 @@ function main() {
             speed = speed * -1;
         }
 
-        for (let i = 405; i < vertices.length; i += 5) {
+        for (let i = 301; i < vertices.length; i += 5) {
             vertices[i] = vertices[i] + speed;
         }
     }
