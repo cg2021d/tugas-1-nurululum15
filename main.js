@@ -317,7 +317,7 @@ function main() {
     var uChange = gl.getUniformLocation(shaderProgram, "uChange");
 
     function moveVertices() {
-        if (vertices[455] < -1.0 || vertices[330] > 1.0) {
+        if (change < -0.8 || change > 0.8) {
             speed = speed * -1;
         }
 
