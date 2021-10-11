@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Point Light</title>
+    <script src="js/three.min.js"></script>
+</head>
+<body>
+    
+</body>
+</html>
+
+
+<script>    
+        let scene, camera, renderer, icosa, circle, light;
+
+        let createIcosa = function() {
+                let geometry = new THREE.IcosahedronGeometry(2);
+                let material = new THREE.MeshPhongMaterial({
+                    color: 0x64cc, 
+                    emissive: 0x2b70, 
+                    shininess: 77.0,
+                    fog: true
+                });
+                icosa = new THREE.Mesh( geometry, material );
+                icosa.receiveShadow = true;
+                icosa.castShadow = true;
+                scene.add( icosa );
+        };
+
+        let createCircle = function() {
+            let geometry = new THREE.CircleGeometry( 50, 50 );
+            let material = new THREE.MeshLambertMaterial( { color: 0x22a827 } );
+            circle = new THREE.Mesh( geometry, material );
+            circle.rotation.x = -Math.PI/2;
+            circle.receiveShadow = true;
+
+            scene.add( circle );
+        };
+
+        let pointLight = function() {
+            light = new THREE.PointLight( 0xffffff, 2, 300 );
+            let sphereSize = 1;
+            let helper = new THREE.PointLightHelper(light, sphereSize);
+
+            scene.add( light );
+            light.position.set(10, 7, 3);
+
+            light.castShadow = true;
+
+            scene.add( light );
+            scene.add( helper );
+        };
+
+        
+        // set up the environment - 
+        // initiallize scene, camera, objects and renderer
+        let init = function() {
+            // 1. create the scene
+            scene = new THREE.Scene();
+            scene.background = new THREE.Color(0x444444);
+            
+            // 2. create an locate the camera       
+            camera = new THREE.PerspectiveCamera(100, window.innerWidth / window.innerHeight, 
+                        1, 1000);
+            camera.position.z = 10;
+            
+            // 3. create an locate the object on the scene           
+            createIcosa();
+            icosa.position.y = -1;
+
+            createCircle();
+            circle.position.set(0, -5, 0);
+
+            pointLight();
+            
+            // 4. create the renderer     
+            renderer = new THREE.WebGLRenderer();   
+            renderer.setSize(window.innerWidth, window.innerHeight);
+            renderer.shadowMap.enabled = true;
+            renderer.shadowMap.type = THREE.BasicShadowMap;
+            document.body.appendChild(renderer.domElement);
+          
+        };
+      
+        
+        // main animation loop - calls 50-60 in a second.
+        let mainLoop = function() {
+            icosa.rotation.x += 0.01;
+            icosa.rotation.y += 0.01;
+            icosa.rotation.z += 0.01;
+
+            renderer.render(scene, camera);
+            requestAnimationFrame(mainLoop);
+        };
+        
+        init();
+        mainLoop();
+    </script>
