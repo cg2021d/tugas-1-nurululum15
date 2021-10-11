@@ -14,9 +14,4 @@
 ![WhatsApp Image 2021-09-04 at 16 21 15 kanan](https://user-images.githubusercontent.com/76694068/136828379-329a653e-e334-4cc9-a9d2-f96f646f31b5.jpeg)
 
 ## Sisi Belakang
-
-
-
-
-
-
+![IMG_20210920_074322-01 blkng](https://user-images.githubusercontent.com/76694068/136829281-e8f6024d-44ed-4713-9d11-fffaee79cafb.jpeg)
